@@ -1,1 +1,1 @@
-creditnet-comments system
+"NCB Comments" demo code
