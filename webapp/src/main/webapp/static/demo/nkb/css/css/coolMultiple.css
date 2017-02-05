@@ -1,0 +1,96 @@
+.hidden{display:none;}
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.clearfix {display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix { height: 1%; }
+
+.coolmulti {
+    width: 100%;
+}
+.coolmulti p{
+    margin:0; 
+    padding:0; 
+    line-height: 14px;
+}
+.coolmulti-scrollbox{
+    height: 250px;
+    overflow-y: scroll;
+    background: #fff;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 0 3px;
+    text-decoration:none;
+    width: 350px;
+    margin-right: 10px;
+}
+.coolmulti-scrollbox span.file{
+    margin: 0;
+    padding: 0;
+}
+.coolmulti-scrollbox p{
+    padding: 0 0 0 14px;
+    cursor: pointer; cursor:hand;
+    font-size: 11px;
+    text-indent: -14px;
+}
+.coolmulti-scrollbox .coolmulti-selected{
+    background: #FFF8AF;
+}
+.coolmulti-values{
+    font-weight: bold;
+    margin-left: 0;
+    line-height: -1px;
+    height: 250px;
+    position: relative;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    float: left;
+    width: 500px;
+}
+.coolmulti-values p{
+    margin: 0 0 2px 0;
+    padding: 0;
+/*
+    position: relative;
+*/
+}
+.coolmulti-values table.nested_table{
+    z-index:9997;
+    width: 480px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+}
+.coolmulti-values table.nested_table td{
+    border: 0;
+    height: 22px;
+}
+.coolmulti-values table.nested_table td.years_container{
+    width: 59px;
+    padding: 0 0 0 2px;
+    z-index:9998;
+}
+.coolmulti-values table.nested_table td.sort_container{
+    width: 21px;
+    margin-left: 1px;
+    padding: 1px 0 0 7px;
+}
+.coolmulti-values table.nested_table td.sort_container img{
+    z-index:9999;
+    border: 0;
+}
+.coolmulti-values table.nested_table td.text_container{
+    padding: 0 0 0 2px;
+    font-size: 11px;
+    font-weight: bold;
+}
+a.coolmulti-del {
+    padding: 0;
+    margin: 0;
+}
+.coolmulti-values table.nested_table td.del_container{
+    width: 17px;
+    padding: 0 0 5px 0;
+    vertical-align: middle;
+}

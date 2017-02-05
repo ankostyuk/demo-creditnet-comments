@@ -1,0 +1,333 @@
+<!--
+
+Permission:
+
+    VIEW,       *
+    CREATE,     *
+
+    EDIT,       *
+    DELETE,     *
+    MODERATE,   *
+    VERIFY,     *
+    EDIT_SCOPE  *
+
+-->
+
+<!-- CommentWidget -->
+<script id="comment-widget-template" type="text/template">
+    <div class="comment-widget bootstrap">
+        <div class="modal">
+            <div class="widget-header modal-header">
+                <span class="close">×</span>
+                <span class="close help">Помощь</span>
+                <h3>Комментарии</h3>
+            </div>
+            <div class="widget-body">
+                {% if (CommentUtils.hasUserPermission('CREATE')) { %}
+                <div class="row">
+                    <div class="span6">
+                        <button class="add-comment btn small">Добавить</button>
+                    </div>
+                </div>
+                <div class="add-comment-cnt">
+                </div>
+                {% } %}
+                <div class="comment-list">
+                    {% if (CommentUtils.hasUserPermission('VIEW')) { %}
+                    <div class="comments-nav">
+                        <div class="comments-tags-filter"></div>
+                        <div class="more-comments">
+                            <div class="btn-group">
+                                <button class="prev btn btn-mini">&lt;</button>
+                                <button class="next btn btn-mini">&gt;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-comments">Нет комментариев</div>
+                    <div class="comments"></div>
+                    {% } else { %}
+                    <div class="no-comments">Нет прав для просмотра комментариев</div>
+                    {% } %}
+                </div>
+                {% if (CommentUtils.hasUserPermission('EDIT')) { %}
+                <div class="edit-comment-cnt">
+                </div>
+                {% } %}
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- BlankCommentWidget -->
+<script id="blank-comment-widget-template" type="text/template">
+    <div class="comment-widget bootstrap">
+        <div class="modal">
+            <div class="widget-header modal-header">
+                <span class="close">×</span>
+                <span class="close help">Помощь</span>
+                <h3>Комментарии</h3>
+            </div>
+            <div class="widget-body">
+                <p><strong>Необходимо <a class="registration" href="#"><strong>зарегистрироваться</strong></a> или авторизоваться.</strong></p>
+                <p>Сервис комментариев — возможность взаимодействовать с информационной системой НКБ и ее
+                    аудиторией, размещать в открытый доступ дополнительную информацию о предприятиях и организациях РФ.</p>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- CommentView -->
+<script id="comment-view-template" type="text/template">
+    <div class="wrapper {%= comment.scope.visibility == 'PRIVATE' ? 'private' : '' %}">
+    <div class="row">
+        <div class="span6">
+            <div class="info row">
+                <div class="author span3">{%- comment.authorName %}</div>
+                <div class="date span3">{% print(DateUtils.formatDateTime(comment.created)); %}</div>
+            </div>
+            <div class="tags-view"></div>
+            <div class="row">
+                <div class="span6">
+                    <div class="content">{% print(CommentUtils.formatContent(comment.content)); %}</div>
+                </div>
+            </div>
+            <div class="footer row">
+                <div class="actions span-w30">
+                    {% if ($.isArray(comment.attachments) && comment.attachments.length > 0) { %}
+                    <span class="attachments action action-tab-attachments" title="Просмотреть прикреплённые файлы"></span>
+                    {% } %}
+                </div>
+                <div class="actions span-w30">
+                    {% if (CommentUtils.hasCommentPermission(comment, 'EDIT_SCOPE')) { %}
+                    <span class="scope action action-tab-scope" title="Изменить область видимости"></span>
+                    {% } %}
+                </div>
+                <div class="status-info span-w120">
+                    {% if (CommentUtils.hasCommentPermission(comment, 'MODERATE')) { %}
+                        <span class="moderation moderate action small action-tab-moderate" title="Модерировать"><span class="icon"></span><span class="moderate-action-view"></span></span>
+                    {% } else if (CommentUtils.USER_INFO.userId == comment.authorId) { %}
+                        {% if (comment.moderation.status == 'PENDING') { %}
+                        <span class="moderation">На модерации</span>
+                        {% } else if (comment.moderation.status == 'APPROVED') { %}
+                        <span class="moderation">Одобрен</span>
+                        {% } else if (comment.moderation.status == 'REJECTED') { %}
+                        <span class="moderation question" title="{%- comment.moderation.rejectionReason %}">Отклонён</span>
+                        {% } %}
+                    {% } else { %}
+                        &nbsp;
+                    {% } %}
+                </div>
+                <div class="status-info span-w120">
+                    {% if (CommentUtils.hasCommentPermission(comment, 'VERIFY')) { %}
+                    <span class="verify-action-view"></span>
+                    {% } else { %}
+                    <span class="verification">{%= comment.verification.verified ? 'Проверен НКБ' : 'Не проверен НКБ' %}</span>
+                    {% } %}
+                </div>
+                <div class="actions align-right span-w80">
+                    {% if (CommentUtils.hasCommentPermission(comment, 'EDIT')) { %}
+                    <span class="edit action" title="Редактировать"></span>
+                    {% } %}
+                    {% if (CommentUtils.hasCommentPermission(comment, 'DELETE')) { %}
+                    <span class="delete action" title="Удалить"></span>
+                    {% } %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="action-pane attachments">
+                </div>
+                <div class="action-pane scope">
+                </div>
+                <div class="action-pane moderate">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</script>
+
+
+<!-- EditCommentWidget -->
+<script id="edit-comment-widget-template" type="text/template">
+    <div class="edit-comment-widget">
+        <div class="row">
+            <div class="span6">
+                <textarea class="attr-content editor"></textarea>
+            </div>
+        </div>
+        <div class="attachment-list-view"></div>
+        <div class="row">
+            <div class="attachment-list new span6">
+                <div class="attachments"></div>
+                <div class="row">
+                    <div class="attach-file-upload"></div>
+                    <div class="span6">
+                        <span class="attach-file btn small-s"><span>+ Прикрепить файл</span><input class="active" type="file" name="file"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tags-view"></div>
+        <div class="scope-view"></div>
+        <div class="row">
+            <div class="span3">
+                <button class="post btn small">Отправить</button>
+            </div>
+            <div class="span3 align-right">
+                <button class="cancel btn small">Отменить</button>
+                <button class="hide btn small">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- AttachmentListView -->
+<script id="attachment-list-view-template" type="text/template">
+    {% if ($.isArray(comment.attachments)) { %}
+    <div class="attachment-list"></div>
+    {% } %}
+</script>
+
+
+<!-- AttachmentView -->
+<script id="attachment-view-template" type="text/template">
+    <div class="attachment row">
+        <div class="span3"><a class="download" href="#">{%- attachment.name %}</a></div>
+        <!-- TODO size -->
+        <div class="span2">{% print(CommentUtils.humanizeBinarySize(attachment.size, 1)); %}</div>
+        <div class="actions align-right small span1">
+            {% if (CommentUtils.hasCommentPermission(comment, 'EDIT')) { %}
+            <span class="detach action" title="Удалить файл"></span>
+            {% } %}
+        </div>
+    </div>
+</script>
+
+
+<!-- NewAttachmentView -->
+<script id="new-attachment-view-template" type="text/template">
+    <div class="info span4"><input class="name" type="text" value="{%- fileName %}" title="Изменить наименование"></div>
+    <div class="status span1">
+        <span class="success icon not-visible" title="Сохранено"></span>
+        <span class="error icon not-visible"></span>
+    </div>
+    <div class="actions align-right small span1">
+        <span class="detach action" title="Не прикреплять файл"></span>
+    </div>
+</script>
+
+
+<!-- TagsView -->
+<script id="tags-view-template" type="text/template">
+    <form>
+        <span class="tags-header">Метки:</span>
+        <span class="tag-list">
+            {% _.each(tags, function(tag, i){ %}
+                {% if (!readonly || tag.checked) { %}
+                <span class="tag tag-{%= i+1 %} {%= tag.checked ? 'checked' : '' %}">{%- tag.name %}</span>
+                {% } %}
+            {% }); %}
+        </span>
+    </form>
+</script>
+
+
+<!-- ScopeView -->
+<script id="scope-view-template" type="text/template">
+    {% if (shareGroups == null) { %}
+    <div class="wait"></div>
+    {% } else { %}
+    <form>
+        <h5>Видимость</h5>
+        <div class="visibility row">
+            <div class="span-w80 no-wrap">
+                <label class="no-wrap"><input type="radio" {%= scope.visibility == 'PUBLIC' ? 'checked="checked"' : '' %} name="visibility" value="PUBLIC"><span>Публичный</span></label>
+            </div>
+            <div class="span-w120">
+                {% if ($.isArray(shareGroups) && shareGroups.length > 0) { %}
+                <label class="attr-scope-shareGroups" title="Укажите одну или несколько групп"><input type="radio" {%= scope.visibility == 'GROUP' ? 'checked="checked"' : '' %} name="visibility" value="GROUP"><span>Группы</span></label>
+                <div class="share-groups">
+                {% _.each(shareGroups, function(group){ %}
+                    <div><label><input type="checkbox" {%= scope.visibility == 'GROUP' ? ($.inArray(group.id, scope.shareGroups) != -1 ? 'checked="checked"' : '') : '' %} value="{%= group.id %}"><span>{%- group.name %}</span></label></div>
+                {% }); %}
+                </div>
+                {% } else { %}
+                <label class="attr-scope-shareGroups disabled" title="Нет прав для изменения области видимости для групп"><input type="radio" disabled="disabled" {%= scope.visibility == 'GROUP' ? 'checked="checked"' : '' %} name="visibility" value="GROUP"><span>Группы</span></label>
+                {% } %}
+            </div>
+            <div class="span2">
+                <label><input type="radio" {%= scope.visibility == 'PRIVATE' ? 'checked="checked"' : '' %} name="visibility" value="PRIVATE"><span>Личный</span></label>
+            </div>
+        </div>
+    </form>
+    {% } %}
+</script>
+
+
+<!-- ModerateActionView -->
+<script id="moderate-action-view-template" type="text/template"><!--
+    -->{% if (moderation.status == 'PENDING') { %}<!--
+    -->На модерации<!--
+    -->{% } else if (moderation.status == 'APPROVED') { %}<!--
+    -->Одобрен<!--
+    -->{% } else if (moderation.status == 'REJECTED') { %}<!--
+    -->Отклонён<!--
+    -->{% } %}
+</script>
+
+
+<!-- ModerateView -->
+<script id="moderate-view-template" type="text/template">
+    {% if (moderation.status == 'APPROVED') { %}
+    <div class="row">
+        <div class="span-w80">&nbsp;</div>
+        <div class="span-w200"><div class="moderator-name">{%- moderation.moderatorName %}</div></div>
+        <div class="align-right span2">{% print(DateUtils.formatDateTime(moderation.updated)); %}</div>
+    </div>
+    {% } else if (moderation.status == 'PENDING' && moderation.updated) { %}
+    <div class="row">
+        <div class="span-w80">Возвращён</div>
+        <div class="span-w200"><div class="moderator-name">{%- moderation.moderatorName %}</div></div>
+        <div class="align-right span2">{% print(DateUtils.formatDateTime(moderation.updated)); %}</div>
+    </div>
+    {% } else if (moderation.status == 'REJECTED') { %}
+    <div class="row">
+        <div class="span-w80">&nbsp;</div>
+        <div class="span-w200"><div class="moderator-name">{%- moderation.moderatorName %}</div></div>
+        <div class="align-right span2">{% print(DateUtils.formatDateTime(moderation.updated)); %}</div>
+    </div>
+    <div class="row">
+        <div class="rejection-reason span6">{%- moderation.rejectionReason %}</div>
+    </div>
+    {% } %}
+    <div class="moderation-actions row">
+        <div class="{%= moderation.status != 'APPROVED' && moderation.status != 'REJECTED' ? 'span2' : moderation.status != 'REJECTED' ? 'span4' : 'span3' %}">
+            {% if (moderation.status != 'APPROVED') { %}
+            <button class="approve btn small-s">Одобрить</button>
+            {% } else if (moderation.status != 'REJECTED') { %}
+            <input class="rejection-reason-action" type="text" title="Укажите причину отклонения"><button class="reject btn small-s">Отклонить</button>
+            {% } %}
+        </div>
+        <div class="align-right {%= moderation.status != 'PENDING' && moderation.status != 'REJECTED' ? 'span2' : moderation.status != 'REJECTED' ? 'span4' : 'span3' %}">
+            {% if (moderation.status != 'PENDING') { %}
+            <button class="review btn small-s">Вернуть на модерацию</button>
+            {% } else if (moderation.status != 'REJECTED') { %}
+            <input class="rejection-reason-action" type="text" title="Укажите причину отклонения"><button class="reject btn small-s">Отклонить</button>
+            {% } %}
+        </div>
+        <div style="display: none;">
+            <input class="rejection-reason-action" type="text" title="Укажите причину отклонения"><button class="rejection-reason-action rejection-reason-enter btn small-s">Отклонить</button>
+        </div>
+    </div>
+</script>
+
+
+<!-- VerifyActionView -->
+<script id="verify-action-view-template" type="text/template">
+    {% if (verification.verified) { %}
+    <button class="verification verify btn small-s" title="Проверен: {%- verification.verifierName %} {% print(DateUtils.formatDateTime(verification.updated)); %}">Проверен НКБ</button>
+    {% } else { %}
+    <button class="verification verify btn small-s">Не проверен НКБ</button>
+    {% } %}
+</script>

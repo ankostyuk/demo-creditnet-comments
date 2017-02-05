@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.4.xsd
+    ">
+    <!-- production -->
+
+    <bean id="securityProvider" class="ru.nullpointer.nkbcomment.security.CnasSecurityProvider">
+        <property name="securityServiceEndpoint" ref="cnasSecurityServiceEndpoint" />
+    </bean>
+
+    <bean id="cnasSecurityServiceEndpoint" class="creditnet.cnas.auth.SecurityServiceEndpoint"
+            factory-bean="cnasSecurityServiceFactory" factory-method="create" />
+
+    <bean id="cnasSecurityServiceFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+        <property name="serviceClass" value="creditnet.cnas.auth.SecurityServiceEndpoint" />
+        <property name="address" value="${comments.cnas.securityServiceUrl}" />
+        <property name="outInterceptors">
+            <list merge="true">
+                <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+            </list>
+        </property>
+        <property name="inInterceptors">
+            <list merge="true">
+                <bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="fileStorage" class="ru.nullpointer.nkbcomment.filestorage.CnasFileStorage">
+        <property name="fileContentServiceEndpoint" ref="cnasFileContentServiceEndpoint" />
+        <property name="securityService" ref="securityService" />
+    </bean>
+
+    <bean id="cnasFileContentServiceEndpoint" class="creditnet.cnas.service.FileContentServiceEndpoint"
+            factory-bean="cnasFileContentServiceFactory" factory-method="create" />
+
+    <bean id="cnasFileContentServiceFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+        <property name="serviceClass" value="creditnet.cnas.service.FileContentServiceEndpoint" />
+        <property name="address" value="${comments.cnas.fileContentServiceUrl}" />
+    </bean>
+
+</beans>

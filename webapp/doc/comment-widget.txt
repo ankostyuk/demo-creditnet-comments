@@ -1,0 +1,12 @@
+h1. Зависимости
+
+h2. JS
+
+* jquery.js (jQuery v1.7.1)
+
+h2. CSS
+
+* bootstrap.css (Bootstrap v1.4.0)
+* comment-widget.css
+
+h1. API

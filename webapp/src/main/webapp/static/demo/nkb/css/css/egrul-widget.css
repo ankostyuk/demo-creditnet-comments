@@ -1,0 +1,75 @@
+#egrulWidget {
+    background: none repeat scroll 0 0 #F0EDE9; 
+    /*background: none repeat scroll 0 0 #EEEEEC;*/
+	/*width: 330px;*/
+	/*height: 200px;*/
+	position: absolute;
+	right: 30px;
+    border: 1px solid #BABDB6;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 65px 0 20px 0;
+    padding: 20px;
+    display:none;
+	}
+#bankruptsyWidget {
+    background: none repeat scroll 0 0 #EEEEEC;
+	width: 330px;
+	height: 200px;
+	position: absolute;
+	right: 30px;
+	top: 260px;
+    border: 1px solid #BABDB6;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 65px 0 20px 0;
+    padding: 20px;
+	}
+#inn_data {
+	display: none;
+}
+#ogrn_data {
+	display: none;
+}
+#bsn_data {
+	display: none;
+}
+#company_name_data {
+	display: none;
+}
+#egrulProgressBar {
+	background-image: url('/img/js/animated_progress_bar_537cae_fast.gif');
+	width: 160px;
+	height: 20px;
+	margin: 1em 0 1em 0;
+	position: static;	
+}
+#egrul_menu_label {
+	font-weight: bold;
+}
+#egrulDocsList {
+	font-size: 8pt;
+	position: static;	
+	margin: 0 0 1em 0;
+}
+#egrulUpdateNote {
+	margin: 0 0 0 0;
+	font-size: 8pt;
+	position: static;	
+}
+#egrulRightsList {
+	font-size: 8pt;
+	position: static;	
+}
+#bankruptsy_info {
+	color: red;
+	font-weight: bold;
+}
+#account_stat {
+	text-align: right;
+}
+#account_stat a {
+	margin: 0 20px 0 0;
+	font-family: Arial Cyr,Arial,sans-serif;
+	font-size: 10px;
+}

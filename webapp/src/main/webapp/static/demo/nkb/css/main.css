@@ -1,0 +1,699 @@
+body,td,th,input,div,select,textarea{font-family: Verdana,Tahoma,Arial,sans-serif;font-size: 11px;color: #000000}
+.newsdate{
+	font-family: Verdana,Tahoma,Arial,sans-serif;
+	font-size: 9px;
+	color: #B00E0E;
+	font-weight: normal;
+}
+.newstext{
+	font-family: Verdana,Tahoma,Arial,sans-serif;
+	font-size: 9px;
+	color: #333333;
+}
+a{font-family: Verdana,Tahoma,sans-serif; font-size: 11px; color: #000066}
+.error{color: red; font-size: 11px; font-weight: bold; font-family: Verdana, Arial, sans-serif;}
+.comment{color: #537CAE; font-size: 11px; font-family: Verdana, Arial, sans-serif;}
+.detailed{color: #B00E0E; font-size: 11px; font-family: Verdana, Arial, sans-serif;}
+.detailed2{font-family: Verdana,Tahoma,Arial,sans-serif;font-size: 11px;color: #152A52;font-weight: bold;}
+.headlink{font-family: Verdana,Tahoma,sans-serif; font-size: 13px; color: #000066; text-decoration: none;}
+.title{ clear:both; font-family: Verdana,Tahoma,Arial,sans-serif;font-size: 13px; font-weight: bold;}
+.reptitle{font-family: Verdana,Tahoma,Arial,sans-serif;font-size: 15px; font-weight: bold; color: #B00E0E;}
+.repsubtitle{font-family: Verdana,Tahoma,Arial,sans-serif;font-size: 13px; font-weight: bold; color: #B00E0E;}
+.repheader{font-family: Verdana,Tahoma,Arial,sans-serif;font-size: 12px; font-weight: bold; color: #FFFFFF;}
+.headertitle{font-family: Verdana,Tahoma,Arial,sans-serif;font-size: 12px; font-weight: bold; color: #000000;}
+.subtitle{font-family: Verdana, Arial, sans-serif; color: #3131A8; font-size: 11px; font-weight: bold;}
+td.line{background-color : #8ebbe8;}
+.req{color: red; font-family:Verdana, Arial, sans-serif; font-size:11px;}
+.owndata{color:#3131A8;	font-family:Verdana, Arial, sans-serif; font-size: 11px;}
+
+table.list{background-color: #FFFFFF;}
+table.list td.odd, tr.odd{background-color: #E7EAF1; font-size: 11px; font-family: Verdana, Tahoma, sans-serif; color: #000000;}
+table.list td.even, tr.even{background-color: #FFFFFF; font-size: 11px; font-family:Verdana, Tahoma, sans-serif; color: #000000;}
+table.list td.odd_marked{background-color: #E7EAF1; font-size: 11px; font-family:Verdana, Tahoma, sans-serif; color: #E20000;}
+table.list td.even_marked{background-color: #BFC4CE; font-size: 11px; font-family:Verdana, Tahoma, sans-serif; color: #E20000;}
+table.list th{background-color: #526DA5; color: #FFFFFF; font-size: 11px;}
+table.list a{font-size: 11px; font-family: Verdana, Tahoma, sans-serif;}
+table.result td{font-size: 11px; font-family: Verdana, Tahoma, sans-serif;}
+table.result {empty-cells: show;}
+table.result .summary td{
+    border-top: dashed 1px silver;
+    font-weight:bold;
+    padding-top:8px;
+}
+
+table.result .name {width:50%;}
+table.result .price {width:10%; text-align:center;}
+table.result .comment {width:40%;}
+table.result .watched     {color:green ;}
+table.result .fromAccount {color:black ;}
+table.result .nomoney     {color:red;}
+
+.online_payment_sum{margin:2px;}
+input.btn{font: bold 11px 'trebuchet ms',helvetica,sans-serif;  background-color: #FFCD5A;}
+
+.ncb_agreement {margin-bottom: 2px;}
+
+/*div#page_search_adv*/
+div#page_search_adv A {
+text-decoration: none /* Убирает подчеркивание для ссылок */
+} 
+
+div#page_search_adv A:hover { 
+text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+color: red /* Ссылка красного цвета */
+}
+
+div#page_search_adv p {
+	margin: 0;
+}
+div#page_search_adv p.title {
+	margin: 0 0 18px 0;
+}
+div#parade_menu {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	margin-bottom: 12px;
+}
+#showcase_menu{
+	margin: 4px 0 10px 0;
+	border: 0;
+	border-collapse: collapse;
+	width: 737px;
+}
+#showcase_menu td{
+	border: 0;
+}
+#showcase_menu tr{
+	border: 0;
+}
+#parade_menu .tooltip{
+   position: absolute;
+   width: 440px;
+   padding: 10px 13px;
+   z-index: 9999;
+   
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   
+   font-family: sans-serif;
+   font-size: 11px;
+   line-height: 14px;
+   text-align: left;
+   display: none;
+
+   background-color: #eeeeee;/*#e3ebf1;*/
+   border: 1px solid #79b7e0;
+   
+   font-weight: normal; 
+   color: black;
+}
+
+div#page_search_adv .ui-datepicker-trigger {
+   vertical-align:middle;
+}
+
+div#page_search_adv .ui-selectmenu-menu li a {
+   font-size:7pt;
+   line-height: 0.5em;
+}
+
+div#page_search_adv td.fin_col1 {
+   width: 350px;
+   text-align: right;
+}
+div#page_search_adv td.fin_col2 {
+   text-align: right;
+   width: 15px;
+}
+div#page_search_adv td.fin_col3 {
+   text-align: left;
+   width: 15px;
+}
+div#page_search_adv td.fin_col4 {
+   text-align: right;
+   width: 15px;
+}
+div#page_search_adv td.fin_col5 {
+   text-align: left;
+   width: 15px;
+}
+
+div#page_search_adv .addMoreFields {
+   margin: 0 0 0 5px;
+   height: 25px;
+   border: 0;
+}
+
+div#page_search_adv .removeFields {
+   margin: 0 0 0 5px;
+   height: 25px;
+   border: 0;
+}
+
+div#page_search_adv .addMoreFields img {
+   margin: 3px 0 0 0;
+}
+
+div#page_search_adv .removeFields img {
+   margin: 3px 0 0 0;
+}
+
+/*
+dl.zakaz_nav { display: block; width: auto; height: 44px; margin: 0; background: #eeeeee url('/img/arrow_menu_zakaz_search_adv.png') no-repeat left top; padding: 0;}
+dl.zakaz_nav dt, dl.zakaz_nav dd { float: left; display: inline; margin: 6px 0 0 33px;}
+dl.zakaz_nav dt { color: black; text-align: center; font-weight: bold; margin: 14px 0 0 30px; font-size: 14px;}
+dl.zakaz_nav dd div.menu_link { padding: 2px; text-align: center; -webkit-border-radius: 6px; -moz-border-radius: 6px; background: #e5e5e5;}
+dl.zakaz_nav dd#nav1 div.menu_link {width: 140px;} 
+dl.zakaz_nav dd#nav2 div.menu_link {width: 85px;} 
+dl.zakaz_nav dd#nav3 div.menu_link {width: 85px;} 
+dl.zakaz_nav dd#nav4 div.menu_link {width: 170px;} 
+dl.zakaz_nav dd a { text-decoration: none; margin-left: 0; padding: 0; text-align: center; font-weight: bold; font-size: 11px; }
+dl.zakaz_nav dd div.menu_link:hover { background: #537cae; }
+dl.zakaz_nav dd div.menu_link:hover a { color: white; }
+*/
+dl.zakaz_nav dd.active a { background: #2daebf; color: #fff; }
+
+button.blueButton, a.blueButton button {
+    min-width:100px;
+    border:solid 1px #4f76b1 ;
+    background-color: #4f76b1 ;
+    color:white ;
+    font-family: Arial ;
+    font-size: 12px;
+    font-weight: bold ;
+    cursor:pointer;
+}
+a.blueButton {
+   text-decoration: none;
+
+}
+
+dl.zakaz_nav { float: left; display: block; width: 735px; height: 44px; margin: 0; margin-bottom:12px; padding: 0; 
+	background: #eeeeee url('/img/arrow_menu_zakaz_search_adv.png') no-repeat left top;
+	-webkit-border-top-right-radius: 6px; 
+	-webkit-border-bottom-right-radius: 6px; 
+	-moz-border-radius-topright: 6px;
+	-moz-border-radius-bottomright: 6px;
+}
+dl.zakaz_nav dt {float: left; display: inline; margin: 12px 0 0 20px; width: 110px; padding: 0; color: black; text-align: left; font-weight: bold; font-size: 14px;}
+dl.zakaz_nav dd { float: left; display: inline; padding: 0 3px 0 3px; height: 34px; -webkit-border-radius: 6px; -moz-border-radius: 6px; -o-border-radius:60px; background: #e5e5e5; cursor: pointer;}
+dl.zakaz_nav dd#nav1 {
+    margin: 5px 5px 0 0;   
+    width: 140px;
+    width:expression(document.body.clientWidth > 140? "140px": "auto" );
+}
+dl.zakaz_nav dd#nav2 {
+    margin: 5px 5px 0 8px;
+    width: 110px;
+    width:expression(document.body.clientWidth > 130? "130px": "110px" );
+}
+dl.zakaz_nav dd#nav3 {
+    margin: 5px 5px 0 8px;
+    width: 110px;
+    width:expression(document.body.clientWidth > 120? "120px": "110px" );
+}
+dl.zakaz_nav dd#nav4 {
+    margin: 5px 5px 0 8px; 
+    max-width: 170px;
+    width:expression(document.body.clientWidth > 170? "170px": "auto" );
+}
+dl.zakaz_nav dd div.menu_link { padding: 2px 0 0 0; text-align: center; font-weight: bold; }
+dl.zakaz_nav dd a { display: block; text-decoration: none; margin-left: 0; padding: 0; text-align: center; font-weight: bold; font-size: 11px; }
+
+.blueButton[disabled] {
+    background-color: #a7c0d6 ;
+    border:solid 1px #a7c0d6 ;
+}
+
+.buttonbox .blueButton {
+    margin:4px;
+}
+
+.payment_logos {
+    position:absolute;
+    left:690px;
+    top:70px;
+}
+
+.payment_logos img{
+    margin-left:8px;    
+    border:none;
+}
+
+.buttonHref {
+  text-decoration:none;
+}
+div.egrul_service {
+	width: 140px;
+}
+div.egrul_res_menu {
+	color: black;
+	font-weight: bold;
+	border: 1px solid #537cae;
+	text-decoration: none;
+	white-space: nowrap;
+	float:left;
+	height: 15px;
+	color: black;
+}
+div.egrul_res_menu_hover {
+	background: #537cae;
+}
+.egrul_res_menu span.egrul_data_inn {	
+	display: none;
+}
+.egrul_res_menu span.egrul_data_ogrn {	
+	display: none;
+}
+.egrul_res_menu .egrul_reportbuttonlink {
+	text-decoration: none;
+	color: black;
+}
+.egrul_res_menu .egrul_reportbuttonlink_hover {
+	color: white;
+}
+.egrul_res_menu div.egrul_tooltip {
+	width: 289px;
+}
+.egrul_res_menu div.egrul_tooltip_no_data {
+	width: 130px;
+}
+.egrul_res_menu div.egrul_menu_label {
+	font-weight: normal;
+	font-size: 9px;
+	line-height: 14px;
+	font-family: sans-serif;
+	text-decoration: none;
+	margin: 0 5px 0 5px;
+	text-align: left;
+}
+.egrul_res_menu .egrul_row {
+	white-space: nowrap;
+	float: left;
+	width: 100%;
+	font-weight: normal;
+	font-family: sans-serif;
+	font-size: 9px;
+	width: 289px;
+}
+.egrul_res_menu .egrul_row_no_data {
+	margin: 0 4px 0 15px;
+	white-space: nowrap;
+	float: left;
+	width: auto;
+	font-weight: normal;
+	font-family: sans-serif;
+	font-size: 9px;
+	text-align: left;
+	width: 130px;
+}
+.egrul_res_menu .egrul_date {
+	width: 100%;
+	float: left;
+	margin: 0;
+	font-size: 9px;
+	font-family: sans-serif;
+}
+.egrul_res_menu .egrul_date a {
+	display: block;
+	width: 100%;
+	padding: 0;
+	text-decoration: underline;	
+}
+.egrul_res_menu .egrul_date a .egrul_date_link_text {
+	padding: 0 0 0 15px;
+	font-size: 9px;
+	text-decoration: none;	
+	font-family: sans-serif;
+	text-align: left;
+}
+.egrul_res_menu .egrul_date a:hover {
+	background: #79b7e0;
+	text-decoration: underline;
+}
+
+.egrul_res_menu .tooltip{
+	position: absolute;
+	margin: 0;
+	padding: 2px 0 2px 0;
+	z-index: 9999;
+	display: none;
+	border: 1px solid #537cae;
+	background: #e3ebf1; 
+	width: auto;
+}
+.egrul_res_menu .egrul_data_fetched {
+	display: none;
+}
+div#scXase {
+	position: absolute; 
+	left: 667px; 
+	top: 156px;
+}
+
+.right {
+    float:right;    
+}
+
+div#facilities_panel{
+	margin: 3px 0 0 0;
+}
+
+div#facilities_panel div.nav_button{
+        width:145px;
+        height:17px;
+        background: #537cae no-repeat 6px 3px;
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+        border-radius:3px;
+	margin: 27px 3px 5px 0;
+	float:left;
+}
+div#facilities_panel div.nav_button a {
+	display: block;
+	position: relative;
+	top: 1px;
+        text-shadow:-1px -1px 1px rgba(0, 0, 0, 0.5);
+        color:white;
+        font-weight:bold;
+        font-size:10px;
+        text-decoration: none;
+	width: 145px;
+	text-align: center;
+}
+div#facilities_panel div.nav_button a:hover {
+        color:white;
+        text-decoration: none;
+}
+.extrarowname select {
+    max-width:340px;
+}
+
+.egrip_table {
+    border-spacing: 6px;
+}
+.egrip_table .logo {
+    background-color: #0266bb;
+}
+
+.egrip_table .nest {
+    border:solid 1px silver;
+    padding:6px;
+    text-align: justify;
+}
+
+.egrip_table .nest .content {
+    background-color: #E6E6E6;
+    padding:10px;
+}
+
+.purchaseErr {
+    color: red;
+}
+
+.reportTitle {
+    cursor: pointer;
+}
+
+.purchaseErrmsg {
+    font-size: 10px;
+    margin-bottom:2px;
+    color:lightgray;
+}
+
+.with_remainder {
+    color:green;
+    margin:5px;
+    cursor: pointer;
+}
+
+.simple_tooltip {
+    position:absolute;
+    border:1px solid #333;
+    background:#f7f5d1;
+    padding:2px 5px;
+    color:#333;
+    display:none;
+}
+
+.paymentLegalTextbox{
+    border:solid 1px silver; 
+    padding:12px; 
+    font-size:12px;
+    margin:6px;    
+}
+
+.help_image_nest {
+    width: 100%;
+} 
+
+.help_image {
+    width:650px;
+    border:solid 1px silver;
+    background: #EFEFEF;
+    padding:10px;
+    text-align:center;
+    margin: auto;    
+}
+
+.help_image img {
+    width:650px;
+    border:solid 1px #DADADA;
+    margin-bottom:10px;
+    display: block;
+}
+
+.help_image .caption {
+    font-weight:bold;
+}
+
+.taxreport_header {
+    width:100%;
+}
+
+.taxreport_header .example {
+    float:right;
+}
+
+.taxreport_header h1{
+    font-size:12px;
+}
+
+
+.table_title  {text-align:center;}
+.demo_report_title {text-align:center;}
+.demo_report_title h1 {font-size:14px;}
+.demo_report_title h2 {
+      font-size:11px;
+      font-style:italic;
+      font-weight:normal;
+}
+.demo_report .firstof {font-weight:bold;}
+.demo_report {clear:both; border-collapse: collapse; margin-bottom:12px;}
+.demo_report td {padding:8px; border:solid 1px black; padding:4px;}
+.foreign_logo {float:right; margin:18px;}
+.foreign_company {float:left; margin:18px; margin-top:70px;}
+.demo_report tr td.optionName {vertical-align:top; font-weight:bold;}
+.demo_report_list li {margin-bottom:8px;}
+
+#soglas {
+    padding:10px;
+}
+
+.bill_requisites label {
+    text-align:right;
+    width:100px;
+    float:left;
+    margin-top:5px;
+}
+.bill_requisites .inputs input {
+    margin:5px 0 0 10px;
+    width:500px;
+}
+
+.bill_requisites h1 {
+    font-size:16px;
+}
+
+.bill_requisites #submit {
+    float:left;
+}
+
+.description {
+    font-style: italic;
+    font-size: 10px;
+    padding:8px;
+}
+
+.examples_bar {
+    text-align:center; 
+}
+
+.examples_bar .current {font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #B00E0E;} 
+.examples_bar td {font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #999999;}
+
+
+.examples_bar a {
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+    font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF
+} 
+
+.examples_bar .style8 a:hover { 
+    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: #B00E0E /* Ссылка красного цвета */
+}
+
+#agreement li {
+    margin-bottom:4px;
+}
+
+.extended_comment {
+    width:100%;
+    clear:both;
+    margin:10px;
+    display:none;
+    text-align: center;
+}
+
+.extended_comment textarea {
+    width:400px;
+    height:100px;
+}
+
+.footnote {
+    font-size:10px;
+    color:grey;
+    font-style:italic;
+}
+
+.tariff {
+    margin-bottom:20px;
+    margin-top:20px;
+}
+
+.tariff_group {
+    text-align:right;
+    font-weight: bold;
+    margin:8px;
+    margin-bottom: 20px;
+}
+
+.tariffs {
+    float:left;
+}
+
+.tariffs_table tr:hover {
+    background:#EBEBEB;
+}
+
+.justified p {
+    text-align:justify;
+}
+
+.club_description {
+    text-align: left;
+}
+
+.club_description .header img {
+    margin-right: 16px;
+    margin-bottom: 8px;
+}
+
+.header .desrc {
+    float:left;
+    width:100px;
+    font-weight: bold;
+}
+
+.club_links {
+    margin-left:10px;
+    margin-bottom:16px;
+}
+
+table tr .payment_buttons {
+    width:40px;
+}
+
+table tr .payment_buttons a{
+    text-decoration: none;
+}
+
+table tr .payment_buttons img{
+    display:inline;
+    margin:2px;
+    margin-top:8px;
+}
+
+.club_action {
+    padding-left:0px;
+    margin-right: 10px;
+}
+
+.club_action li{
+    margin-bottom:20px;
+    font-variant: small-caps;
+}
+
+#debtor_search {
+    clear:both;
+    display:none;
+}
+#debtor_add {
+    clear:both;
+    display:none;
+}
+
+.debtor .row {
+    margin-bottom:10px;
+}
+
+.debtor .row .key {
+    display:inline-block;
+    width:200px;
+}
+
+.debtor .row .value {
+    display: inline;
+    clear:right;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.remains {
+    color:red;
+    font-weight: bold;
+}
+
+.news li {
+    margin-bottom: 5px;    
+}
+
+.news .news_date {
+    display:inline-block;
+    margin-right:10px;
+}
+
+.news .title {
+    display:inline-block;
+}
+
+.no_sub {
+    text-decoration:none;
+}
+
+.request_params .param .name {
+    display:inline-block;
+    min-width:40px;
+}
+
+.request_params .param .value {
+    display:inline-block;    
+}

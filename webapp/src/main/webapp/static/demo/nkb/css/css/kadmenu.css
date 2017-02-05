@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+}
+
+div.report {
+    width: 100%;
+    font-size: 8pt;
+    font-family: Arial Cyr, Arial, sans-serif;
+    clear: both;
+}
+
+div.report div.content {
+    background-color: white;
+    margin-top: 1em;
+    min-height: 30em;
+    padding: 0 4px 0 0;
+}
+
+div.report .content p.caption {
+    padding: 2px;
+    margin: 3em 2px 0 2px !important;
+    margin: 3em -2px 0 2px;
+    text-align: left;
+    font-weight: bold;
+    background: #537cae;
+    font-size: 115%;
+    color: white;
+}
+
+div.report .content td.caption_top {
+    padding: 2px;
+    margin: 0 2px 0 2px;
+    margin: 0 -2px 0 2px;
+    text-align: left;
+    font-weight: bold;
+    background: #537cae !important; 
+    font-size: 115%;
+    color: white;
+}
+
+div.report table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    vertical-align: top;
+}
+
+div.report .content td.bold {
+    font-weight: bold;
+}
+
+div.report td {
+    border: 2px solid white;
+    vertical-align: top;
+    padding:3px;        
+}
+
+div.report .content td.bold {
+    font-weight: bold;
+}
+
+div.report .content div.internalblock table.kad_block {
+    border: 0;
+    width: 100%;
+}
+
+div.report th.judge {
+    width :164px;
+}
+
+div.report td.judge {
+    text-align:center;
+}
+
+div.report .content div.internalblock table.kad_block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.kad_block td {
+    padding: 3px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.kad_block .col1 {
+    font-weight: bold;
+    text-align: left;
+    width: 60px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.kad_block .col2 {
+    text-align: right;
+    width: 100px;
+    border-width: 2px 0 0 2px;
+    white-space: nowrap;
+}
+
+div.report .content div.internalblock table.kad_block .col3 {
+    text-align: right;
+    width: 100px;
+    border-width: 2px 0 0 2px;
+    white-space: nowrap;
+}
+
+div.report .content div.internalblock table.kad_block .col4 {
+    text-align: right;
+    width: 30px;
+    border-width: 2px 0 0 2px;
+    vertical-align: bottom;
+}
+
+div.report .content div.internalblock table.kad_block .col0 {
+    width:10px !important;
+}
+
+div.report .content div.internalblock {
+    border-top-width: 0;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    border-color: white;
+    border-style: solid;
+    margin: 0 1px 1px 2px;
+    padding: 0;
+    font-size: 8pt;
+}
+
+
+div.report .content div.internalblock tr {
+    font-size: 8pt;
+}
+
+div.report .content div.internalblock td {
+    background-color: #f4f1ec;
+    padding: 3px;
+}
+
+
+
+div.report .content div.internalblock table.block {
+    border: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.block td {
+    padding: 3px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report th {
+    border: 2px solid white;
+    vertical-align: top;
+    font-weight: bold;
+    text-align: center;
+    background: #abcbf1;
+    color: #333333; 
+}
+
+div.report p.kad_header {
+    margin: 0 0 8px 2px;
+}
+
+.paging {
+    margin:5px;
+    font-size: 12px;
+}
+
+.padding .currentPage {
+    font-weight: bold;
+}
+.padding a{
+    margin:10px;
+}
+
+.highlight {
+    background-color:#f0c040 !important;
+}

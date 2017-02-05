@@ -1,0 +1,1472 @@
+BODY {
+    margin: 0;
+}
+
+@page {
+    size: A4;
+}
+
+div.report {
+    width: 740px;
+    font-size: 8pt;
+    font-family: Arial Cyr, Arial, sans-serif;
+    clear: both;
+}
+
+@media print {
+    div.report {
+        font-size: 7pt;
+        max-width: 100%;
+        font-family: Courier New, monospace;
+    }
+}
+
+div.report div.reportswitch_1 {
+    margin: 0 0 0 0;
+}
+
+div.report div.reportswitch_1 a {
+    margin: 0 0 0 0;
+}
+
+div.report div.reportswitch_2 {
+    margin: 0 0 0 0;
+}
+
+div.report div#reportmenu {
+    width: auto;
+    margin: 0 2px 20px 0;
+    border: 0;
+}
+
+div.report div#reportmenu table {
+    width: 754px;
+}
+
+div.report div#reportmenu td {
+    padding: 6px 4px 6px 6px;
+    vertical-align: middle;
+    background-color: #f0ede9;
+    border: 0;
+}
+
+div.report div#reportmenu td#col2 {
+    width: 60px;
+    text-align: left;
+}
+
+div.report div#reportmenu td#col3 {
+    width: 65px;
+    text-align: left;
+}
+
+div.report div#reportmenu .cssbuttons {
+    margin: 0 0 0 3px;
+}
+
+div.report div#reportmenu .cssbuttons a {
+    text-decoration: none;
+    color: black;
+}
+
+div.report div#reportmenu .cssbuttons #descmenu1 {
+    padding: 2px 20px 1px 6px;
+}
+
+div.report div#reportmenu .cssbuttons .topmenu {
+    position: relative;
+    float: left;
+    padding: 2px 6px 1px;
+    text-decoration: none;
+    font-size: 10px;
+    background-color: white;
+    border: 1px solid #98012e;
+    margin: 0 3px 0 5px;
+    width: auto;
+    height: 13px;
+    color: black;
+    font-weight: normal;
+}
+
+div.report div#reportmenu .cssbuttons .topmenuhover {
+    background-color: #bb012e;
+    border: 1px solid #bb012e;
+}
+
+div.report div#reportmenu .cssbuttons .topmenuhoverlink {
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+div.report div#reportmenu .cssbuttons #fallout {
+}
+
+div.report div#reportmenu .cssbuttons #fallout ul {
+    position: absolute;
+    border: 1px solid #bb012e;
+    top: 6px;
+    background-color: white;
+    padding: 10px 0 10px 0;
+    margin-left: 0;
+    width: auto;
+    left:-1px;
+}
+
+div.report div#reportmenu .cssbuttons #fallout ul li {
+    display: block;
+    border: 0;
+}
+
+div.report div#reportmenu .cssbuttons #fallout ul li a {
+    display: block;
+    padding: 3px 16px 3px;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    border: 0;
+    white-space: nowrap;
+    background-color: transparent;
+}
+
+div.report div#reportmenu .cssbuttons #fallout ul li a:hover {
+    color: white;
+    background-color: #bb012e;
+}
+
+div.report div#reportmenu .cssbuttons .loading {
+    background: #bb012e url('../img/ajax-loader.gif') no-repeat 98% 50%;
+    color: white;
+    z-index: 9999;
+}
+
+span.visibleblock {
+    display: block;
+}
+
+div.report .cnlogo {
+    margin: 1em 0 0 14px;
+}
+
+div.report p.report_date_comment {
+    margin: 4px 14px 1em;
+    font-weight: bold;
+    text-align: left;
+}
+
+div.report .content p.comments {
+    text-align: left;
+    margin: 2px 10px 0.1em;
+    line-height: 100%;
+    page-break-before: avoid
+}
+
+div.report .content p.comments_reiting {
+    margin: 0 10px 0;
+    text-align: left;
+}
+
+div.report .content p.fin_coefficient_comment {
+    font-size: 80%;
+    margin: 1em 10px 0;
+    -fs-keep-with-inline: keep;
+    page-break-before: avoid;
+}
+
+div.report .content p.notice_comment {
+    font-size: 80%;
+    margin: 1em 10px 0;
+    page-break-before: avoid;
+}
+
+
+div.report .content span.bold {
+    font-weight: bold;
+}
+
+div.report .content div.address_boss {
+    margin-left: 1em;
+    width:95%;
+}
+
+div.report .content div.address_boss span.address_menu_float {
+    float: none;
+}
+
+@media print {
+    div.report .content div.address_boss span.address_menu_float {
+        float: none;
+    }
+}
+
+div.report div.content {
+    background-color: white;
+    margin-top: 1em;
+    min-height: 30em;
+    padding: 0 4px 0 0;
+}
+
+div.report .content {
+    padding: 0;
+    margin: 4em 0 0 0;
+}
+
+@media print {
+    div.report .content {
+        width: 100%;
+        -fs-keep-with-inline: keep;
+        page-break-before: auto;
+        page-break-inside: auto;
+    }
+}
+
+@media screen {
+    div.report .content {
+        width: 100%;
+    }
+}
+
+div.report .content p.caption {
+    padding: 2px;
+    margin: 3em 2px 0 2px !important;
+    margin: 3em -2px 0 2px;
+    text-align: left;
+    font-weight: bold;
+    background: #537cae;
+    font-size: 115%;
+    color: white;
+}
+
+div.report .content table.otsenka p.caption {
+    padding: 2px;
+    margin: 3em 2px 0 2px !important;
+    margin: 3em -2px 0 2px;
+    text-align: left;
+    font-weight: bold;
+    background: #537cae;
+    font-size: 9pt;
+    color: white;
+}
+
+div.report .content div.otsenka p.caption {
+    padding: 2px;
+    margin: 3em 2px 0 2px !important;
+    margin: 3em 2px 0 2px;
+    text-align: left;
+    font-weight: bold;
+    background: #537cae;
+    font-size: 9pt;
+    color: white;
+}
+
+div.report .content .caption_top {
+    padding: 2px;
+    margin: 16px 0 0 2px !important;
+    margin: 0 -2px 0 2px;
+    text-align: left;
+    font-weight: bold;
+    padding-bottom:10px;
+}
+
+div.report .content p.caption_without_indent {
+    padding: 2px;
+    margin: 1em 2px 0 2px !important;
+    margin: 1em -2px 0 2px;
+    text-align: left;
+    font-weight: bold;
+    background: #537cae;
+    font-size: 115%;
+    color: white;
+}
+
+@media print {
+    div.report .content p.caption {
+        width: 687px;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+}
+
+div.report table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    vertical-align: top;
+    margin-bottom:8px;
+}
+
+@media print {
+    div.report table {
+        border-collapse: collapse;
+        orphans: 2;
+        widows: 2;
+        page-break-before: avoid;
+        page-break-after: inherit;
+    }
+}
+
+div.report tr {
+    page-break-inside: avoid;
+}
+
+div.report th {
+    border: 1px solid white;
+    vertical-align: top;
+    font-weight: normal;
+    text-align: center;
+    background: #abcbf1;
+    padding: 8px;
+    color: #333333; }
+
+@media print {
+    div.report th {
+        page-break-inside: avoid;
+    }
+}
+
+div.report div.zagolovok {
+    text-align: left;
+    width: 500px;
+    page-break-after: avoid;
+    margin: 60px 0 15px 200px;
+}
+
+div.report div.zagolovok_compact {
+    text-align: left;
+    width: 500px;
+    page-break-after: avoid;
+    margin: 0 0 15px 250px;
+}
+
+div.report div.zagolovok div.reportname {
+    color: #5c5c5c;
+    vertical-align: top;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0 0 6px;
+}
+
+div.report div.zagolovok div.bsnname {
+    color: #143b6b;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 50px 50px;
+    width: 350px;
+}
+
+div.report div.zagolovok_compact div.bsnname {
+    color: #143b6b;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 1em 1em;
+    width: 400px;
+}
+
+div.report h3 {
+    margin: 3em 1em -2em;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+    font-size: 9pt;
+    clear: both;
+}
+
+div.report h4 {
+    margin: 3em 1em -2em;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+    font-size: 8pt;
+    clear: both;
+}
+
+div.report h4.comments {
+    margin: 3em 1em 1em;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+    font-size: 8pt;
+    clear: both;
+}
+
+@media print {
+    div.report div.header {
+        padding: 0;
+        width: 687px;
+    }
+}
+
+@media screen {
+    div.report div.header {
+        padding: 0;
+        width: 756px;
+    }
+}
+
+div.report td {
+    border: 2px solid white;
+    vertical-align: top;
+    padding:3px;
+}
+
+div.report .content td.bold {
+    font-weight: bold;
+}
+
+div.report .content div.internalblock table.salevolumedynamics_block {
+    border: 0;
+    width: 100%;
+}
+
+@media print {
+    div.report .content div.internalblock table.salevolumedynamics_block {
+        width: 687px;
+    }
+}
+
+div.report .content div.internalblock table.salevolumedynamics_block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.salevolumedynamics_block td {
+    padding: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.salevolumedynamics_block .col1 {
+    font-weight: bold;
+    text-align: left;
+    width: 60px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.salevolumedynamics_block .col2 {
+    text-align: right;
+    width: 100px;
+    border-width: 2px 0 0 2px;
+    white-space: nowrap;
+}
+
+div.report .content div.internalblock table.salevolumedynamics_block .col3 {
+    text-align: right;
+    width: 30px;
+    border-width: 2px 0 0 2px;
+    vertical-align: bottom;
+}
+
+div.report .content div.internalblock table.block_simple {
+    width: 100%;
+    border: 0;
+    margin: 3em 0 0 0;
+}
+
+div.report .content div.internalblock table.block_simple td {
+    background-color: white;
+    text-align: left;
+}
+
+div.report .content div.internalblock table.block_reiting {
+    width: 90mm;
+    border: 0;
+}
+
+div.report .content div.internalblock table.block_reiting td {
+    background-color: #F4F1EC;
+}
+
+div.report .content div.internalblock {
+    border-top-width: 0;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    border-color: white;
+    border-style: solid;
+    margin: 0 1px 1px 2px;
+    padding: 0;
+    font-size: 8pt;
+}
+
+div.report .content div.otsenka div.internalblock {
+    margin: 0 2px 1px 2px;
+    width: 367px !important;
+    width: 368px;
+}
+
+@media print {
+    div.report .content div.internalblock {
+        width: 687px;
+    }
+}
+
+@media print {
+    div.report .content div.otsenka div.internalblock {
+        width: 687px;
+    }
+}
+
+div.report .content div.internalblock tr {
+    font-size: 8pt;
+}
+
+div.report .content div.internalblock td {
+    background-color: #f4f1ec;
+    white-space: nowrap;
+}
+
+div.report .content div.internalblock th {
+}
+
+div.report .content div.internalblock table.block {
+    border: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.block td {
+    padding: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.block .col1 {
+    font-weight: bold;
+    text-align: left;
+    width: 160px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .col2 {
+    text-align: left; /*width: 150mm;*/
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .col1_rating {
+    text-align: left;
+    width: 100px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .col2_rating {
+    text-align: left;
+    width: 100px;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .col3_rating {
+    text-align: left; /*width: 150mm;*/
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .gos_reg_col1 {
+    text-align: left;
+    font-weight: bold;
+    width: 156px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .gos_reg_col2 {
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceChangesInCapital_col1 {
+    font-weight: bold;
+    text-align: left;
+    width: 450px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .repBalanceChangesInCapital_col2 {
+    text-align: right;
+    width: 139px;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceChangesInCapital_col3 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceCashFlows_col1 {
+    font-weight: bold;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .repBalanceCashFlows_col2 {
+    text-align: right;
+    width: 139px;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceBalanceSheetAppendix_col1 {
+    font-weight: bold;
+    width: 370px;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .repBalanceBalanceSheetAppendix_col2 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceBalanceSheetAppendix_col3 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceResearchDevelopmentEngineering_col1 {
+    font-weight: bold;
+    width: 370px;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .repBalanceResearchDevelopmentEngineering_col2 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceResearchDevelopmentEngineering_col3 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceNaturalResourcesDevelopment_col1 {
+    font-weight: bold;
+    width: 370px;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .repBalanceNaturalResourcesDevelopment_col2 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceFinancialInvestments_col1 {
+    font-weight: bold;
+    width: 370px;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .repBalanceFinancialInvestments_col2 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.block .repBalanceOrdinaryOperationsExpenses_col1 {
+    font-weight: bold;
+    width: 370px;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .repBalanceOrdinaryOperationsExpenses_col2 {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.findata .balanceDinamics_highlighting {
+    color: #B00E0E;
+}
+
+div.report .content div.internalblock table.block .balanceDinamics_col1 {
+    font-weight: bold;
+    width: 370px;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .balanceDinamics_col2 {
+    text-align: right;
+    width: 90px;
+    border-width: 2px 0 0 2px;
+}
+
+div.report div.content div.internalblock table.block_reiting td.col1 {
+    font-weight: bold;
+    text-align: left;
+    width: 30mm;
+}
+
+div.report div.content div.internalblock table.block_reiting td.col2 {
+    text-align: right;
+}
+
+div.historname {
+    text-align: right;
+    font-style: italic;
+}
+
+div.report .content div.internalblock td.actual {
+    font-weight: bold;
+}
+
+div.report .content div.internalblock span.actual_sign {
+    vertical-align: bottom;
+}
+
+div.report .content div.internalblock span.cross_sign {
+    vertical-align: bottom;
+}
+
+div.report .footnote {
+    vertical-align: super;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+div.report .footnote_comment {
+    font-weight: bold;
+    font-size: 80%;
+}
+
+div.report .content div.internalblock table.findata {
+    border: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.findata tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.findata tr.odd {
+    background-color: #dddad5;
+}
+
+div.report .content div.internalblock table.findata th {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.findata td {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.findata .column1 {
+    width: 224px;
+    font-weight: normal;
+    padding: 1px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.findata .column2 {
+    text-align: center;
+    padding: 1px;
+    width: 26px;
+    font-weight: bold;
+}
+
+div.report .content div.internalblock table.findata .column3 {
+    text-align: right;
+    padding: 1px;
+    width: 485px;
+}
+
+div.report .content div.internalblock table.findata .column3_main_balance {
+    text-align: right;
+    padding: 1px;
+}
+
+div.report .content div.internalblock table.findata .column3_2datacols {
+    text-align: right;
+    padding: 1px;
+    width: 240px;
+}
+
+div.report .content div.internalblock table.findata .column3_4datacols {
+    text-align: right;
+    padding: 1px;
+    width: 118px;
+}
+
+div.report .content div.internalblock table.findata_indikator {
+    border: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.findata_indikator tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.findata_indikator th {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.findata_indikator td {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.findata_indikator .column1 {
+    width: 60mm;
+    font-weight: bold;
+    padding: 1px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.findata_indikator .column1_1 {
+    width: 7mm;
+    font-weight: bold;
+    padding: 1px;
+    text-align: right;
+}
+
+div.report .content div.internalblock table.findata_indikator .column2 {
+    text-align: right;
+    padding: 1px;
+}
+
+div.report .content div.internalblock table.findata_indikator .column3 {
+    text-align: right;
+    padding: 1px;
+    width: 18mm;
+    font-weight: bold;
+}
+
+div.report .content div.internalblock table.findata_indikator .column4 {
+    text-align: right;
+    padding: 1px;
+    width: 25mm;
+}
+
+@media print {
+
+}
+
+div.report .content div.otsenka {
+    width: 754px;
+}
+
+@media print {
+    div.report .content div.otsenka {
+        width: 687px;
+    }
+}
+
+div.report .content div.otsenka_left {
+    float: left;
+    width: 371px;
+}
+
+@media print {
+    div.report .content div.otsenka_left {
+        float: left;
+        width: 687px;
+    }
+}
+
+div.report .content div.otsenka_right {
+    float: right;
+    width: 371px;
+}
+
+@media print {
+    div.report .content div.otsenka_right {
+        float: right;
+        width: 687px;
+    }
+}
+
+div.report .content div.otsenka_bottom {
+    clear: both;
+}
+
+@media print {
+    div.report div.otsenka {
+        width: 688px;
+        margin-top: 1em;
+        border: 0;
+        padding: 0;
+        border-spacing: 0;
+        background-color: white;
+    }
+}
+
+@media screen {
+    div.report .content table.otsenka {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+}
+
+div.report .content table.otsenka tr {
+    border: 0;
+    background-color: white;
+}
+
+div.report .content table.otsenka td {
+    border: 0;
+    vertical-align: top;
+    padding: 0;
+}
+
+div.report .content table.otsenka td.otsenka_col1 {
+    vertical-align: top;
+    padding: 0 0 0 0 !important;
+    padding: 0 4pt 0 0;
+}
+
+div.report .content table.otsenka td.otsenka_col2 {
+    vertical-align: top;
+    padding: 0 0 0 12px !important;
+    padding: 0 4pt 0 12px;
+}
+
+@media print {
+    div.report div.internalblock div.block_otsenka {
+        border: 1px solid #537cae;
+        padding: 0;
+        background-color: #f4f1ec;
+    }
+}
+
+@media screen {
+    div.report div.internalblock div.block_otsenka {
+        border: 1px solid #537cae;
+        padding: 0;
+        background-color: #f4f1ec;
+    }
+}
+
+@media print {
+    div.report .content div.internalblock table.block_potentsial {
+        width: 100%;
+        margin: 0 1px 2px;
+    }
+}
+
+@media screen {
+    div.report .content div.internalblock table.block_potentsial {
+        border: 0;
+        width: 100%;
+    }
+}
+
+div.report .content div.internalblock table.block_potentsial tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.block_potentsial th {
+    border-width: 2px 0 0 2px;
+    border-style: solid;
+    border-color: white;
+}
+
+div.report .content div.internalblock table.block_potentsial td {
+    text-align: center;
+    border-width: 2px 0 0 2px;
+    border-style: solid;
+    border-color: white;
+    background-color: #F4F1EC;
+}
+
+div.report .content div.internalblock table.block_potentsial .col1 {
+    border-width: 2px 0 0 0;
+}
+
+div.report div.otsenka_border {
+    border: 0;
+}
+
+div.report span.videlenie_otsenki {
+    font-weight: bold;
+    color: red;
+}
+
+div.report div.otsenka_block {
+    margin: 2px 2px 0 4px;
+    line-height: 1.5;
+    background-color: #F4F1EC;
+}
+
+div.report .content div.internalblock tr.separator {
+    border: 0;
+    height: 2px;
+}
+
+div.report .content div.internalblock tr.separator td {
+    border-width: 2px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    padding: 0;
+    margin: 0;
+    height: 2px;
+}
+
+div.report .content div.internalblock tr.separator div.separator_block {
+    height: 2px;
+    background: #537cae;
+    font-size: 1px;
+}
+
+div.report .content div.internalblock tr.separator div.separator_big_block {
+    height: 3px;
+    background: #537cae;
+    font-size: 1px;
+}
+
+div.report .content div.internalblock table.founderdepender_block tr.separator_part_sort td {
+    border-width: 2px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    padding: 0;
+    margin: 0;
+    height: 10px;
+}
+
+div.report .content div.internalblock table.founderdepender_block tr.separator_part_sort div.separator_block {
+    height: 11px;
+    background: #537cae;
+    font-size: 80%;
+    color: white;
+    padding: 1px;
+}
+
+div.report .content div.internalblock table.founderdepender_block {
+    border-width: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.founderdepender_block th {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.founderdepender_block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.founderdepender_block td {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.founderdepender_block tr.separator td {
+    border-width: 2px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    padding: 0;
+    margin: 0;
+}
+
+div.report .content div.internalblock table.founderdepender_block td.branchcol1 {
+    border-width: 2px 0 0 0;
+    width: 60px;
+    text-align: left;
+}
+
+div.report .content div.internalblock table.founderdepender_block td.branchcol2 {
+    width: 65px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+@media print {
+    div.report .content div.internalblock table.founderdepender_block td.branchcol2 {
+        width: 85px;
+    }
+}
+
+div.report .content div.internalblock table.founderdepender_block td.branchcol3 {
+    width: 80px;
+    text-align: right;
+}
+
+div.report .content div.internalblock table.founderdepender_block td.branchcol4 {
+    width: 40px;
+    text-align: right;
+}
+
+div.report .content div.internalblock table.founderdepender_block td.branchcol5 {
+    /*width: 346px;*/
+    width: 57%;
+    text-align: left;
+}
+
+div.report .content div.internalblock table.founderdepender_block td.branchcol_capital {
+    width: 80px;
+    text-align: right;
+}
+
+div.report .content div.internalblock table.founderdepender_block th.branch_coefficient {
+    font-size: 80%;
+}
+
+div.report .content div.internalblock table.dolgnost_block {
+    border: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.dolgnost_block th {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.dolgnost_block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.dolgnost_block tr.separator td {
+    border-width: 2px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    padding: 0;
+    margin: 0;
+}
+
+div.report .content div.internalblock table.dolgnost_block td {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.dolgnost_block td.dolgnostcol1 {
+    width: 70px;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.dolgnost_block td.dolgnostcol2 {
+    width: 70px;
+    text-align: left;
+}
+
+@media print {
+    div.report .content div.internalblock table.dolgnost_block td.dolgnostcol2 {
+        width: 85px;
+    }
+}
+
+div.report .content div.internalblock table.dolgnost_block td.dolgnostcol3 {
+    width: 90px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+div.report .content div.internalblock table.dolgnost_block td.dolgnostcol4 {
+}
+
+div.report .content div.internalblock table.internalhistory {
+    border: 0;
+    margin: 0;
+    font-size: 8pt;
+    page-break-before: avoid;
+}
+
+div.report .content div.internalblock table.internalhistory tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.internalhistory th {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+div.report .content div.internalblock table.internalhistory th.name {
+
+    font-weight: bold;
+    text-align: left;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.internalhistory td {
+    border-color: white;
+    border-style: solid;
+    color:black;
+    padding:3px;
+    white-space: normal;
+}
+
+div.report .content div.internalblock table.internalhistory .ihcol1 {
+    width: 160px;
+    border-width: 2px 0 0 0;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    background-color: #F4F1EC;
+}
+
+div.report .content div.internalblock table.internalhistory .ihcol2 {
+    width: 60px;
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.internalhistory .ihcol3 {
+    width: 70px;
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+@media print {
+    div.report .content div.internalblock table.internalhistory .ihcol3 {
+        width: 85px;
+    }
+}
+
+div.report .content div.internalblock table.internalhistory .ihcol4 {
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.internalhistory .ihcol4_num {
+    text-align: right;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.internalhistory .ihcol5 {
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+div.report button.btn {
+    font: bold 84% 'trebuchet ms', helvetica, sans-serif;
+    background-color: #537cae;
+    color: white;
+    margin: 4px 10px 0;
+}
+
+div.report .content div.internalblock table.timeline_block tr.separator_interval td {
+    border-width: 2px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    padding: 1px;
+    margin: 0;
+    height: 16px;
+    background: #537cae;
+    font-weight: bold;
+    color: white;
+}
+
+div.report .content div.internalblock table.timeline_block tr.separator_interval div.separator_block {
+}
+
+div.report .content div.internalblock table.timeline_block {
+    border-width: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.timeline_block th {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.timeline_block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.timeline_block td {
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.timeline_block tr.separator td {
+    border-width: 2px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    padding: 0;
+    margin: 0;
+}
+
+div.report .content div.internalblock table.timeline_block td.branchcol1 {
+    border-width: 2px 0 0 0;
+    width: 60px;
+    text-align: left;
+}
+
+div.report .content div.internalblock table.timeline_block td.branchcol2 {
+    width: 65px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+@media print {
+    div.report .content div.internalblock table.timeline_block td.branchcol2 {
+        width: 85px;
+    }
+}
+
+div.report .content div.internalblock table.timeline_block td.branchcol3 {
+    border-width: 2px 0 0 0;
+    width: 80px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+div.report .content div.internalblock table.timeline_block td.branchcol4 {
+    width: 40px;
+    text-align: right;
+}
+
+div.report .content div.internalblock table.timeline_block td.branchcol5 {
+    text-align: left;
+}
+
+div.report .content div.internalblock table.timeline_block td.branchcol_capital {
+    width: 80px;
+    text-align: right;
+}
+
+div.report .content div.internalblock table.timeline_block th.branch_coefficient {
+    font-size: 80%;
+}
+
+div.report .content div.internalblock table.timeline_block tr.questionable_data {
+    background-color: #ffcee7;
+}
+
+div.report .content div.internalblock table.okvedactivities_block {
+    border: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.okvedactivities_block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.okvedactivities_block td {
+    padding: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.okvedactivities_block .col1 {
+    font-weight: bold;
+    text-align: left;
+    width: 150px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.okvedactivities_block .col2 {
+    text-align: left;
+    width: 40px;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.okvedactivities_block .col3 {
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.altmanzscore_block {
+    border: 0;
+    width: 100%;
+}
+
+div.report .content div.internalblock table.altmanzscore_block tr {
+    border: 0;
+}
+
+div.report .content div.internalblock table.altmanzscore_block td {
+    padding: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+div.report .content div.internalblock table.altmanzscore_block .col1 {
+    font-weight: bold;
+    text-align: left;
+    width: 60px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.altmanzscore_block .col2 {
+    text-align: right;
+    font-weight: bold;
+    width: 60px;
+    border-width: 2px 0 0 2px;
+}
+
+div.report .content div.internalblock table.altmanzscore_block .col3 {
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+div.report span.bold {
+    font-weight: bold;
+}
+
+div.report .content div.chartblock {
+    margin: 1em 0 0 2px;
+}
+
+div.creditreforma {
+    font-family: Monospace;
+}
+
+div.creditreforma span.emphasis {
+    color: red;
+}
+
+div.report .content div.internalblock table.block .reliable_col1 {
+    text-align: left;
+    font-weight: bold;
+    width: 156px;
+    border-width: 2px 0 0 0;
+}
+
+div.report .content div.internalblock table.block .reliable_col2 {
+    text-align: left;
+    border-width: 2px 0 0 2px;
+}
+
+div.report div.reliable_alert {
+    text-align: right;
+    font-weight: bold;
+    margin: 0 1em 0 0;
+}
+
+div.report .content div.internalblock table.block_notes_badge td.col1 {
+    width: 20px;
+    text-align: center;
+}
+
+div.report .content p.demo_alert {
+    margin: 0 1em 1em 1em;
+    background-color: #fff7c4;
+    padding: 1em;
+}
+
+div.report .kadmenu {
+    position: relative;
+    top: 3px;
+    border: 0;
+}
+
+@media print {
+        ul.jd_menu {
+                display: none;
+        }
+	.kadmenu {
+		display: none;
+	}
+}
+
+div.report .content div.internalblock table.internalhistory td.nobr {
+    white-space: nowrap;
+}

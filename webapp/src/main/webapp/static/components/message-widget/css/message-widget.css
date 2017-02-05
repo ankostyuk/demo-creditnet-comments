@@ -1,0 +1,66 @@
+.align-center {
+    text-align: center;
+}
+.align-right {
+    text-align: right;
+}
+
+.message-widget {
+    position: absolute;
+    z-index: 1000000;
+    display: none;
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+    
+    background: transparent url(./i/bg-black25.png) repeat 0 0;
+}
+
+.message-widget .indicator {
+    position: absolute;
+    z-index: 1000001;
+    display: none;
+    margin: 0;
+    padding: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background: transparent url(./i/ajax-loader-bar.gif) no-repeat 50% 50%;
+}
+
+.message-widget .wrapper {
+    position: relative;
+    z-index: 1000001;
+    
+    left: 50%;
+    width: 402px;
+    margin: 0 0 0 -201px;
+    padding: 0;
+}
+
+/* override bootstrap */
+.message-widget .alert.info,
+.message-widget .alert.success,
+.message-widget .alert.warning,
+.message-widget .alert.error,
+.message-widget .alert {
+    margin: 0 !important;
+    padding: 10px;
+    color: #404040 !important;
+    background: #ffffff !important;
+    text-shadow: none !important;
+    border-color: #404040 !important;
+    
+    filter: none !important;
+}
+
+.message-widget .footer {
+    margin-top: 10px;
+}
+
+.message-widget .btn.confirm-yes {
+    width: 50px;
+}

@@ -1,0 +1,10 @@
+.classpath
+.project
+.settings/
+target/
+tmp/
+/catalog.xml
+/nbactions.xml
+/nb-configuration.xml
+pom.xml.versionsBackup
+*.orig

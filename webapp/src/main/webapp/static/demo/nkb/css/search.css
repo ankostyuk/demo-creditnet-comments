@@ -1,0 +1,12 @@
+/* поисковая форма */
+form#SB {display:block; margin:10px 10%;width:700px}
+#SB div {clear:both; padding:2px 0px}
+#SB label {display:block; float:left; width:150px; text-align:right; padding:2px 5px; font-weight:bold; font-size:8pt}
+#SB input {margin:0px; padding:0; font-size:8pt;}
+
+#SB .Name input {width:310px}
+#SB .Adress input {width:310px}
+#SB .Region select {font-size:8pt;}
+#SB .Date input {width:80px}
+#SB .OGRN input {width:120px}
+#SB .GRN input {width:120px}

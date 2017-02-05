@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+    <Parameter name="comments.mongo.host" value="127.0.0.1" override="false" />
+    <Parameter name="comments.mongo.port" value="27017" override="false" />
+    <Parameter name="comments.mongo.dbname" value="nkbcomment" override="false" />
+
+    <Parameter name="comments.cnas.securityServiceUrl" value="http://testing.nkb:8080/cnas/services/SecurityService?wsdl" override="false" />
+    <Parameter name="comments.cnas.fileContentServiceUrl" value="http://testing.nkb:8080/cnas/services/FileContentService?wsdl" override="false" />
+</Context>

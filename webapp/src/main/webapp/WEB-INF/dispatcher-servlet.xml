@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+    <context:component-scan base-package="ru.nullpointer.nkbcomment.web"/>
+
+    <!-- @Controller support -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" p:order="0"/>
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+    <!-- -->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <bean id="urlMappings" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" p:order="1">
+        <property name="mappings">
+            <props>
+                <prop key="/moderation">staticViewController</prop>
+
+                <!-- TODO только для профилей xxx-dev -->
+                <prop key="/demo">staticViewController</prop>
+                <prop key="/demo-search">staticViewController</prop>
+                <prop key="/demo-search-orig">staticViewController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="staticViewController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="0">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.security.authentication.AuthenticationCredentialsNotFoundException">
+                    error/401
+                </prop>
+                <prop key="java.lang.Exception">
+                    error/500
+                </prop>
+            </props>
+        </property>
+    </bean>
+
+    <mvc:resources mapping="/static/**" location="/static/"/>
+
+</beans>

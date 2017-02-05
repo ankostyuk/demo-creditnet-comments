@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+    http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+    ">
+
+    <context:component-scan base-package="ru.nullpointer.nkbcomment.service" />
+    <context:component-scan base-package="ru.nullpointer.nkbcomment.security.domain" />
+
+    <context:property-placeholder location="classpath:/*.properties" local-override="true" />
+
+    <bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.JSONProvider">
+        <property name="serializeAsArray" value="true" />
+        <property name="arrayKeys">
+            <util:list id="jsonKeys">
+                <value>entries</value>
+
+                <value>comments</value>
+                <value>shareGroups</value>
+                <value>permissions</value>
+                <value>attachments</value>
+                <value>tags</value>
+            </util:list>
+        </property>
+        <property name="dropCollectionWrapperElement" value="true" />
+        <property name="dropRootElement" value="true" />
+        <property name="supportUnwrapped" value="true" />
+        <property name="writeXsiType" value="false" />
+    </bean>
+
+    <jaxrs:server address="/">
+        <jaxrs:serviceBeans>
+            <bean class="ru.nullpointer.nkbcomment.api.rest.CommentAPI" />
+            <bean class="ru.nullpointer.nkbcomment.api.rest.UserAPI" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+
+            <bean class="ru.nullpointer.nkbcomment.api.rest.DateParameterHandler" />
+
+            <bean class="ru.nullpointer.nkbcomment.api.rest.AuthenticationExceptionMapper" />
+            <bean class="ru.nullpointer.nkbcomment.api.rest.AccessDeniedExceptionMapper" />
+            <bean class="ru.nullpointer.nkbcomment.api.rest.BadArgumentExceptionMapper" />
+            <bean class="ru.nullpointer.nkbcomment.api.rest.ConflictExceptionMapper" />
+            <bean class="ru.nullpointer.nkbcomment.api.rest.NotFoundExceptionMapper" />
+            <bean class="ru.nullpointer.nkbcomment.api.rest.CommentServiceExceptionMapper" />
+
+            <bean class="ru.nullpointer.nkbcomment.api.rest.FileUploadSupportHandler" />
+            <bean class="ru.nullpointer.nkbcomment.api.rest.FileDownloadSupportHandler" />
+        </jaxrs:providers>
+        <jaxrs:extensionMappings>
+            <entry key="json" value="application/json" />
+        </jaxrs:extensionMappings>
+    </jaxrs:server>
+
+    <mongo:mongo host="${comments.mongo.host}" port="${comments.mongo.port}" />
+
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg ref="mongo"/>
+        <constructor-arg name="databaseName" value="${comments.mongo.dbname}"/>
+    </bean>
+
+    <bean id="commentDAO" class="ru.nullpointer.nkbcomment.dao.impl.MongoCommentDAO" />
+
+</beans>

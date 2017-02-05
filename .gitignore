@@ -1,0 +1,14 @@
+pom.xml.versionsBackup
+*.orig
+
+/.project
+/.settings
+/.classpath
+
+target
+
+/.DS_Store
+.DS_Store
+
+tmp
+.tmp*

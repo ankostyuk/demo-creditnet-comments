@@ -1,0 +1,54 @@
+[
+{
+    "_id" : "pending_comment", 
+    "_class" : "ru.nullpointer.nkbcomment.domain.Comment", 
+    "postId" : "post1", 
+    "authorId" : "authorUserId", 
+    "created" : {
+        "$date": "2011-11-23T22:24:45.132Z"
+    },
+    "content" : "content", 
+    "moderation" : {
+        "status" : "PENDING"
+    }, 
+    "verification": { 
+        "verified": false 
+    }
+},
+{
+    "_id" : "approved_comment", 
+    "_class" : "ru.nullpointer.nkbcomment.domain.Comment", 
+    "postId" : "post1", 
+    "authorId" : "authorUserId", 
+    "created" : {
+        "$date": "2011-11-23T22:24:45.132Z"
+    }, 
+    "content" : "content", 
+    "moderation" : {
+        "status" : "APPROVED",
+        "moderatorId": "moderatorUserId"
+    },
+    "verification": {
+        "verified": true,
+        "verifierId": "verifierUserId"
+    }
+},
+{
+    "_id" : "rejected_comment", 
+    "_class" : "ru.nullpointer.nkbcomment.domain.Comment", 
+    "postId" : "post1", 
+    "authorId" : "authorUserId", 
+    "created" : {
+        "$date": "2011-11-23T22:24:45.132Z"
+    }, 
+    "content" : "content", 
+    "moderation" : {
+        "status" : "REJECTED",
+        "moderatorId": "moderatorUserId",
+        "rejectionReason": "some reason"
+    }, 
+    "verification": { 
+        "verified": false 
+    }
+}
+]

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.4.xsd
+    ">
+    <!-- simple-dev -->
+
+    <bean id="securityProvider" class="ru.nullpointer.nkbcomment.security.SimpleSecurityProvider" />
+
+    <security:user-service id="userDetailsService">
+        <security:user name="user0" password="" authorities="" />
+        <security:user name="user1" password="" authorities="create,edit,delete,view,group(group1:Группа1),group(group2:Группа2),group(group3:Группа3)" />
+        <security:user name="user2" password="" authorities="view,moderate" />
+        <security:user name="user3" password="" authorities="view" />
+        <security:user name="user4" password="" authorities="view,verify" />
+        <security:user name="user5" password="" authorities="view,moderate,verify,edit_scope" />
+        <security:user name="user6" password="" authorities="create,edit,delete,view,group(group1:Группа1)" />
+        <security:user name="user7" password="" authorities="view,create,edit" />
+        <security:user name="user8" password="" authorities="create,edit,delete,view,group(group1:Группа1),group(group2:Группа2)" />
+        <security:user name="SuperUser" password="" authorities="view,create,edit,delete,edit_scope,moderate,verify,group(group1:Группа1),group(group2:Группа2),group(group3:Группа3)" />
+    </security:user-service>
+
+    <bean id="fileStorage" class="ru.nullpointer.nkbcomment.filestorage.SimpleFileStorage">
+        <property name="storageRoot"  value="/tmp" />
+    </bean>
+
+</beans>
